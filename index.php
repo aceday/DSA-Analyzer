@@ -1,0 +1,58 @@
+<?php
+// Simple PHP page that serves the DSA Logic Visualizer
+// It primarily returns HTML which loads JS visualizer from assets/js
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>DSA Logic Visualizer</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+      /* quick override in case file serving path differs */
+    </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>DSA Logic Visualizer</h1>
+      <p>Visual animations for many sorting algorithms. Select one and press Start.</p>
+    </header>
+
+    <section class="controls">
+      <label>Algorithm:
+        <select id="algorithm">
+          <option>selection sort</option>
+          <option>binary insertion sort</option>
+          <option>quick sort</option>
+          <option>merge sort</option>
+          <option>in-place merge sort</option>
+          <option>heap sort</option>
+          <option>tournament sort</option>
+          <option>tree sort</option>
+          <option>block sort (approx)</option>
+          <option>smooth sort (approx)</option>
+          <option>tim sort (simplified)</option>
+          <option>patience sort</option>
+          <option>intro sort</option>
+        </select>
+      </label>
+
+      <label>Array size: <input id="size" type="range" min="5" max="200" value="60"></label>
+      <label>Speed: <input id="speed" type="range" min="1" max="1000" value="120"></label>
+      <button id="shuffle">Shuffle</button>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </section>
+
+    <section id="board" class="board"></section>
+
+    <footer>
+      <small>Note: some advanced algorithms are provided as simplified working approximations for visualization.</small>
+    </footer>
+  </main>
+
+  <script src="/assets/js/visualizer.js"></script>
+</body>
+</html>
